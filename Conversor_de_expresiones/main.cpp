@@ -19,7 +19,7 @@ int main(){
         for (int i = 0;i<current_case.length();i++){
             if (std::isdigit(current_case[i])){
                 operation_element new_element;
-                new_element.value = current_case[i];
+                new_element.value = current_case[i] - '0';
                 new_element.original = true;
                 stack.push_back(new_element);
             } else
@@ -47,11 +47,23 @@ int main(){
                     break;
                 case '/':
                     result.append("/");
-                    new_element.value = e1.value / e2.value;
+                    if (e2.value == 0){
+                        new_element.value = 1;
+                    }else{
+                        new_element.value = e1.value / e2.value;
+                    }
+                    break;
+                case '*':
+                    result.append("*");
+                    new_element.value = e1.value * e2.value;
                     break;
                 case '%':
                     result.append("%");
-                    new_element.value = e1.value % e2.value;
+                    if (e2.value == 0){
+                        new_element.value = 1;
+                    }else{
+                        new_element.value = e1.value % e2.value;
+                    }
                     break;
                 }
                 new_element.original = false;
@@ -66,6 +78,8 @@ int main(){
             stack.pop_back();
         }
         std::cout << result << std::endl;
+        result = "";
+        stack.clear();
     }
     return 0;
 }
