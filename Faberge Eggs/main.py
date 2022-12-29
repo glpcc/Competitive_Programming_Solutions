@@ -126,8 +126,8 @@ def test_height3(n,m):
         return 1
     if n == 1:
         return m
-    if n == 2:
-        return (m*(m+1))/2
+    if n == 3:
+        return ((m-1)*m*(m+1))//6 + m
     if m<=n:
         return 2**m - 1
     pascal_tree_dict = [1]
@@ -173,12 +173,12 @@ def time_function(func,n,m,times = 1):
         b = time()
         average += (b-a)/times
     return average
-n = 1000
-m = 10000
+n = 4
+m = 7
 n_times = 1
-# print(test_height2(n,m))
-# print()
-# print(test_height3(n,m))
+print(test_height2(n,m))
+print()
+print(test_height3(n,m))
 result = test_height3(n,m)
 print(type(result))
 assert test_height2(n,m) == result
