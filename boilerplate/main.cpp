@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
+
 int main(){
     std::string test; 
     std::cin >> test;
