@@ -40,7 +40,7 @@ int main(){
             done = true;
             temp = up_bound;
         }
-        while (!done || low_bound >= up_bound){
+        while (!done && low_bound <= up_bound){
             temp = (up_bound+low_bound)/2;
             num_ceros = calculate_num_ceros(temp);
             if (num_ceros == num_desired_zeros){
@@ -49,6 +49,14 @@ int main(){
                 up_bound = temp-1;
             }else{
                 low_bound = temp+1;
+            }
+        }
+        if (low_bound >= up_bound){
+            if (calculate_num_ceros(low_bound) == num_desired_zeros){
+                temp = low_bound;
+            }else{
+                cout << "NINGUNO\n";
+                founded = true;
             }
         }
         long long int final_num = temp - temp%5;
