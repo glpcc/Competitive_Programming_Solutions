@@ -13,6 +13,8 @@ long long int calculate_num_ceros(long long int n){
 }
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int div_num; cin >> div_num;
     long long int num_desired_zeros; cin >> num_desired_zeros;
     bool founded;
@@ -38,24 +40,24 @@ int main(){
             done = true;
             temp = up_bound;
         }
-        while (!done){
-            temp = (up_bound-low_bound)/2 + low_bound;
+        while (!done || low_bound >= up_bound){
+            temp = (up_bound+low_bound)/2;
             num_ceros = calculate_num_ceros(temp);
             if (num_ceros == num_desired_zeros){
                 done = true;
             }else if (num_ceros > num_desired_zeros){
-                up_bound = temp;
+                up_bound = temp-1;
             }else{
-                low_bound = temp;
+                low_bound = temp+1;
             }
         }
-        long long int final_num = temp;
+        long long int final_num = temp - temp%5;
         //cout << five_mult << '\n';
         for (size_t i = 0; i < 5; i++)  
         {
-            if ((final_num*5 + i) % div_num == 0 && !founded){
+            if ((final_num + i) % div_num == 0 && !founded){
                 cout << final_num + i << '\n';
-                cout << calculate_num_ceros(final_num + i) << '\n';
+                //cout << final_num % 3<< '\n';
                 founded = true;
             } 
         }
