@@ -48,7 +48,7 @@ int main(){
             }
         }
         
-        for (size_t i = 0; i < 1000; i++)  
+        for (size_t i = 0; i < 5; i++)  
         {
             if ((five_mult*5 + i) % div_num == 0 && !founded){
                 cout << five_mult*5 + i << '\n';
