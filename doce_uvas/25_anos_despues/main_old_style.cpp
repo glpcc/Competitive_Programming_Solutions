@@ -29,33 +29,26 @@ int main(){
             continue;
         }
         founded = false;
-        long long int up_bound = num_desired_zeros*5;
-        long long int low_bound = 0;
+        long long int five_mult = num_desired_zeros;
         bool done = false;
-        long long int temp;
-        long long int num_ceros;
-        if (calculate_num_ceros(up_bound) == num_desired_zeros){
-            done = true;
-            temp = up_bound;
-        }
+        long long int temp = 1;
+        long long int total_to_rest = 0;
         while (!done){
-            temp = (up_bound-low_bound)/2 + low_bound;
-            num_ceros = calculate_num_ceros(temp);
-            if (num_ceros == num_desired_zeros){
+            temp = temp*5 + 1;
+            //cout << total_to_rest << '\n';
+            if (num_desired_zeros/temp < 1){
                 done = true;
-            }else if (num_ceros > num_desired_zeros){
-                up_bound = temp;
             }else{
-                low_bound = temp;
+                total_to_rest += num_desired_zeros/temp;
             }
         }
-        long long int final_num = temp;
+        five_mult -= total_to_rest;
         //cout << five_mult << '\n';
         for (size_t i = 0; i < 5; i++)  
         {
-            if ((final_num*5 + i) % div_num == 0 && !founded){
-                cout << final_num + i << '\n';
-                cout << calculate_num_ceros(final_num + i) << '\n';
+            if ((five_mult*5 + i) % div_num == 0 && !founded){
+                cout << five_mult*5 + i << '\n';
+                cout << calculate_num_ceros(five_mult*5 + i) << '\n';
                 founded = true;
             } 
         }
