@@ -21,7 +21,7 @@ int main(){
     while (!(div_num == 0 && num_desired_zeros == 0))
     {
         if (num_desired_zeros==0){
-            if (div_num == 5){
+            if (div_num >= 5){
                 cout << "NINGUNO\n";
             }else{
                 cout << div_num << '\n';
