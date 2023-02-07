@@ -29,13 +29,13 @@ int main(){
             list_ordered_secs.push_back(temp_person);
         }
         // Ordeno el vector por el numero de segundos.
-        sort(list_ordered_secs.begin(),list_ordered_secs.end(),[](Person p1,Person p2){ return p1.num_secs <= p2.num_secs; });
+        sort(list_ordered_secs.begin(),list_ordered_secs.end(),[](Person p1,Person p2){ return p1.num_secs < p2.num_secs; });
         // Creo el vector de punteros que ordenare por numero de personas;
         for (int i = 0;i < num_cases;i++){
             list_ordered_num_persons.push_back(&list_ordered_secs[i]);
         }
         // Ordeno el vector por el numero de personas.
-        sort(list_ordered_num_persons.begin(),list_ordered_num_persons.end(),[](Person *p1,Person *p2){ return p1->num_persons_left >= p2->num_persons_left; });
+        sort(list_ordered_num_persons.begin(),list_ordered_num_persons.end(),[](Person *p1,Person *p2){ return p1->num_persons_left > p2->num_persons_left; });
 
         // Calculo el numero de segundos
         int list_secs_indx = 0;
@@ -55,7 +55,6 @@ int main(){
                 break;
             }
             sec = list_ordered_secs[list_secs_indx].num_secs;
-            cout << sec << endl;
             while (list_ordered_secs[list_secs_indx].num_secs <= sec){
                 if (list_ordered_secs[list_secs_indx].still_claping){
                     list_ordered_secs[list_secs_indx].still_claping = false;
