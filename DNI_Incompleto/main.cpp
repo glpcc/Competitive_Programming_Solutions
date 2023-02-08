@@ -34,6 +34,8 @@ map<char,int> char_mods = {
 };
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int pows_mods[9];
     for (int i = 0; i < 9; i++)
     {
@@ -51,8 +53,8 @@ int main(){
         {
             cin >> digit;
             if (digit == '?'){
+                questions_pos_mods[num_questions] = pows_mods[7-j];
                 num_questions++;
-                questions_pos_mods[j] = pows_mods[8-j];
                 dni = dni*10;
             }else{
                 dni += (int) (digit-'0');
@@ -66,23 +68,26 @@ int main(){
         while (vals[0] != 10)
         {
             int temp = dni;
-            for (int i = 0; i < 4; i++)
+            for (int k = 0; k < num_questions; k++)
             {
-                temp += questions_pos_mods[i]*vals[i];
+                temp += questions_pos_mods[k]*vals[k];
             }
-            
-            vals[3]++;
-            for (int i = 3; i > 0; i--)
+            if (temp%23 == mod){
+                count++;
+            }
+            vals[num_questions-1]++;
+            for (int k = num_questions-1; k > 0; k--)
             {
-                if (vals[i] == 10){
-                    vals[i-1]++;
-                    vals[i] = 0;
+                if (vals[k] == 10){
+                    vals[k-1]++;
+                    vals[k] = 0;
                 }
             }
             
         }
-                      
+        cout << count << '\n';            
     }
+
     
     return 0;
 }

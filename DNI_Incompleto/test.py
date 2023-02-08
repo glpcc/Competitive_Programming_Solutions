@@ -26,7 +26,6 @@ while vals[0] < 10:
     if temp % 23 == 20:
         count += 1
         print(temp-test_dni)
-        break
     test_int += 1
     vals[-1] += 1
     for i in range(1,len(vals)):
