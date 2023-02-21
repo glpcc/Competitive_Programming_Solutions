@@ -27,17 +27,18 @@ int calculate_coste_total(int indx_altr, int max_jump){
             break;
         }
     }
-    cout << num_posible_jumps << '\n';
+    //cout << indx_altr << " " << num_posible_jumps << endl;
     int result = -1;
     int temp_result;
     for (int i = 0; i < num_posible_jumps; i++)
     {
-        //cout << calculate_coste_total(indx_altr+1+i,max_jump) << '\n';
-        temp_result = costes[indx_altr+i+1]+calculate_coste_total(indx_altr+i+1,max_jump);
+        temp_result = calculate_coste_total(indx_altr+i+1,max_jump);
         if (temp_result < result || result == -1){
             result = temp_result;
         }
     }
+    result += costes[indx_altr];
+    //cout << indx_altr << " " << result << "\n";
     function_memory[indx_altr] = result;
     return result; 
 }
@@ -59,7 +60,18 @@ int main(){
             costes.push_back(temp);
         }
         cin >> max_jump;
-        cout << calculate_coste_total(0,max_jump) << '\n';
+        int result = -1;
+        int temp_result;
+        int i = 0;
+        while (alturas[i] <= max_jump && i < alturas.size()-1)
+        {
+            temp_result = calculate_coste_total(i,max_jump);
+            if (temp_result < result || result == -1){
+                result = temp_result;
+            }
+            i++;
+        }
+        cout << result << '\n';
         alturas.clear();
         costes.clear();
         function_memory.clear();
