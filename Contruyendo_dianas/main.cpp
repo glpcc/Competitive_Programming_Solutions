@@ -15,6 +15,7 @@ vector<int> calculate_min_darts(int points_left,vector<int> darts_list, const ve
     }
     vector<int> solution = {};
     vector<int> posible_solution = {};
+    vector<int> prueba;
     if (calculated_points.find(points_left) != calculated_points.end()){
         return solution;
     }
