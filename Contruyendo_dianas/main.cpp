@@ -1,84 +1,73 @@
 #include <stdio.h>
-#include <string>
 #include <iostream>
-#include <vector>
-#include <unordered_set>
+#include <array>
+#include <algorithm>
 
 using namespace std;
 
-unordered_set<int> calculated_points;
+int INF = 0xffffff;
+array<int,505> mem;
+array<int,505> solution;
+array<int,505> darts_sequence;
+array<int,55> sections;
+int num_min_darts = INF;
 
-vector<int> calculate_min_darts(int points_left,vector<int> darts_list, const vector<int> &sectores,int min_darts, int max_sector_indx){
-    if (darts_list.size() >= min_darts && min_darts != -1){
-        calculated_points.insert(points_left);
-        return darts_list;
+
+
+int calculate_min_dart_sequence(int points,int num_sections,int num_darts){
+    if (mem[points] != -1) return mem[points];
+    if (num_darts > num_min_darts) {
+        mem[points] = num_darts;
+        return num_darts;
     }
-    vector<int> solution = {};
-    vector<int> posible_solution = {};
-    vector<int> prueba;
-    if (calculated_points.find(points_left) != calculated_points.end()){
-        return solution;
+    if (points == 0){
+        if (num_darts < num_min_darts){
+            num_min_darts = num_darts;
+            for (int i = 0; i < num_darts; i++)
+            {
+                solution[i] = darts_sequence[i];
+            }
+        }
+        return num_darts;
     }
-    // cout << "Call: " << points_left << " Min_D: " <<min_darts << endl;
-    // cout << "Darts List: ";
-    // for (int i = 0; i < darts_list.size(); i++)
-    // {
-    //     cout << darts_list[i] << ' ';
-    // }
-    // cout << endl;
-    for (int i = max_sector_indx; i >= 0; i--)
+    
+    int result = INF;
+    int temp;
+    for (int i = num_sections; i >= 0 ; i--)
     {
-        if (sectores[i] > points_left){
-            continue;
-        }else if (sectores[i] == points_left){
-            darts_list.push_back(sectores[i]);
-            return darts_list;
-        }
-        darts_list.push_back(sectores[i]);
-        posible_solution = calculate_min_darts(points_left-sectores[i],darts_list,sectores,min_darts,i);
-        darts_list.pop_back();
-        if (posible_solution.size() != 0 && (posible_solution.size() < min_darts || min_darts == -1) ){
-            min_darts = posible_solution.size();
-            solution = posible_solution;
-        }
+        if (sections[i] > points) continue;
+        darts_sequence[num_darts] = sections[i];
+        temp = calculate_min_dart_sequence(points-sections[i],i,num_darts+1);
+        if (temp < result) result = temp;
     }
-    calculated_points.insert(points_left);
-    return solution;
+    mem[points] = result;
+    return result;
+    
 }
 
-
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int num_puntos;
-    int num_sectores;
-    vector<int> sectores;
-    vector<int> solution;
-    while (cin >> num_puntos)
+    int num_points;
+    int num_sections;
+    while (cin >> num_points)
     {
-        cin >> num_sectores;
-        for (int i = 0; i < num_sectores; i++)
+        num_min_darts = INF;
+        mem.fill(-1);      
+        cin >> num_sections;
+        for (int i = 0; i < num_sections; i++)
         {
-            int temp; cin >> temp;
-            sectores.push_back(temp);
+            cin >> sections[i];
         }
-        solution = calculate_min_darts(num_puntos,solution,sectores,-1,sectores.size()-1);
-        if (solution.size() == 0){
-            cout << "Imposible\n"; 
-        }else{
-            cout << solution.size() << ": " ;
-            for (int i = 0; i < solution.size()-1; i++)
-            {
-                cout << solution[i] << " ";
-            }
-            cout << solution[solution.size()-1] << '\n';
+        calculate_min_dart_sequence(num_points,num_sections-1,0);
+        if (mem[num_points] == INF){
+            cout << "Imposible\n";
+            continue;
         }
-        solution.clear();
-        sectores.clear();
-        calculated_points.clear();
+        cout << num_min_darts << ':';
+        for (int i = 0; i < num_min_darts; i++)
+        {   
+            cout << ' ' << solution[i];
+        }
+        cout << '\n';
     }
     return 0;
 }
-
-
-

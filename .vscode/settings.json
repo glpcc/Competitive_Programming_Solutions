@@ -6,6 +6,7 @@
         "vector": "cpp",
         "xiosbase": "cpp",
         "cstdlib": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "array": "cpp"
     }
 }
