@@ -15,14 +15,9 @@ int num_min_darts = INF;
 
 
 int calculate_min_dart_sequence(int points,int num_sections,int num_darts){
-    //printf("Points: %d, num_sections: %d, num_darts: %d,prev_memory: %d,num_min_darts: %d, Dart_sequence:",points,num_sections,num_darts,mem[points],num_min_darts);
+
     if (mem[points] != -1) return mem[points];
     if (points == 0) return 0;
-    if (num_darts > num_min_darts) {
-        mem[points] = INF;
-        return INF;
-    }
-    
     int result = INF;
     int temp;
     for (int i = num_sections; i >= 0 ; i--)
@@ -37,7 +32,6 @@ int calculate_min_dart_sequence(int points,int num_sections,int num_darts){
             }
         }
     }
-    //cout << points <<" " << result +1 << endl;
     mem[points] = result + 1;
     return result+1;
     
