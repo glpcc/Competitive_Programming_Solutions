@@ -34,9 +34,9 @@ problems_df.sort_values(by='Problem Number',key=lambda k: k.astype('int'))
 # %%
 f = open('Table.md','w',encoding='utf-8')
 
-f.writelines(['|Problem Number|Problem Number|Done|Acepta el Reto Link|\n','|...|...|...|...|\n'])
+f.writelines(['|Problem Number|Problem Name|Done|Acepta el Reto Link|\n','|---|---|---|---|\n'])
 for indx,i in problems_df.iterrows():
     f.write(f'|[{i[0]}](/Acepta_El_Reto/Vol{i[0][0]}/{i[0]})|')
-    f.write(f"|{i[1]}|{'✅' if i[2] else '❌'}|https://www.aceptaelreto.com/problem/statement.php?id={i[0]}|\n")
+    f.write(f"{i[1]}|{'✅' if i[2] else '❌'}|[link](https://www.aceptaelreto.com/problem/statement.php?id={i[0]})|\n")
 f.close()
 # %%
