@@ -1,8 +1,3 @@
-# Introducction
-Repositorie with my solutions to various Competitive programing questions
-
-# Completed Problem Table
-## Acepta El Reto
 |Problem Number|Problem Number|Done|Acepta el Reto Link|
 |...|...|...|...|
 |[100](/Acepta_El_Reto/Vol1/100)||Constante de Kaprekar|✅|https://www.aceptaelreto.com/problem/statement.php?id=100|
