@@ -9,17 +9,17 @@ int main(){
     string anelid;
     stringstream s;
     int num_stages; cin >> num_stages;
-    int stage_size;
-    while (num_stages != 0)
+    while (true)
     {
         cin >> anelid;
         anelid.erase(anelid.length()-1,1);
-        s.str("");
-        s << anelid;
+        if (anelid.length() == 0){break;}
         for (int i = 0; i < num_stages; i++)
         {
+            s.str("");
             for (int j = 0; j < anelid.length(); j++)
             {
+                s << anelid.at(j);
                 s << ((anelid.at(j) == 'A') ? "N":"A");
             }
             anelid = s.str();
