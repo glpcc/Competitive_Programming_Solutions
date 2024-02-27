@@ -1,16 +1,28 @@
 |Problem Number|Problem Name|Done|Acepta el Reto Link|
 |---|---|---|---|
 |[100](/Acepta_El_Reto/Vol1/100)|Constante de Kaprekar|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=100)|
+|[101](/Acepta_El_Reto/Vol1/101)|Cuadrados diabólicos y esotéricos|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=101)|
+|[102](/Acepta_El_Reto/Vol1/102)|Encriptación de mensajes|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=102)|
+|[103](/Acepta_El_Reto/Vol1/103)|Problemas de Herencia|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=103)|
+|[104](/Acepta_El_Reto/Vol1/104)|Móviles|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=104)|
 |[108](/Acepta_El_Reto/Vol1/108)|De nuevo en el bar de Javier|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=108)|
 |[114](/Acepta_El_Reto/Vol1/114)|Último dígito del factorial|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=114)|
 |[116](/Acepta_El_Reto/Vol1/116)|¡Hola mundo!|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=116)|
 |[117](/Acepta_El_Reto/Vol1/117)|La fiesta aburrida|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=117)|
+|[172](/Acepta_El_Reto/Vol1/172)|El pan en las bodas|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=172)|
+|[183](/Acepta_El_Reto/Vol1/183)|Anélidos|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=183)|
+|[192](/Acepta_El_Reto/Vol1/192)|Por 3 o más 5|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=192)|
 |[231](/Acepta_El_Reto/Vol2/231)|Conversor de expresiones|❌|[link](https://www.aceptaelreto.com/problem/statement.php?id=231)|
+|[283](/Acepta_El_Reto/Vol2/283)|Invirtiendo en Jaén|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=283)|
+|[329](/Acepta_El_Reto/Vol3/329)|¡En primera línea de playa!|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=329)|
 |[384](/Acepta_El_Reto/Vol3/384)|El juego de la linterna|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=384)|
 |[424](/Acepta_El_Reto/Vol4/424)|Ahorro infantil|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=424)|
+|[435](/Acepta_El_Reto/Vol4/435)|El Pijote|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=435)|
+|[461](/Acepta_El_Reto/Vol4/461)|Conquistando bases imperiales|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=461)|
 |[492](/Acepta_El_Reto/Vol4/492)|¡Mío!|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=492)|
 |[495](/Acepta_El_Reto/Vol4/495)|Colocando campamentos de altura|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=495)|
 |[554](/Acepta_El_Reto/Vol5/554)|Escaleranos|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=554)|
+|[555](/Acepta_El_Reto/Vol5/555)|Fuga de Alcatraz|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=555)|
 |[562](/Acepta_El_Reto/Vol5/562)|Repartidor de frigoríficos|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=562)|
 |[564](/Acepta_El_Reto/Vol5/564)|El misterioso caso de los múltiplos de 7|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=564)|
 |[565](/Acepta_El_Reto/Vol5/565)|Aplausos|✅|[link](https://www.aceptaelreto.com/problem/statement.php?id=565)|

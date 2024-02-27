@@ -32,7 +32,7 @@ for elem in table.find_elements(By.TAG_NAME,'tr')[1:]:
 # %%
 problems_df.sort_values(by='Problem Number',key=lambda k: k.astype('int'))
 # %%
-f = open('Table.md','w',encoding='utf-8')
+f = open('Scripts/Table.md','w',encoding='utf-8')
 
 f.writelines(['|Problem Number|Problem Name|Done|Acepta el Reto Link|\n','|---|---|---|---|\n'])
 for indx,i in problems_df.iterrows():
